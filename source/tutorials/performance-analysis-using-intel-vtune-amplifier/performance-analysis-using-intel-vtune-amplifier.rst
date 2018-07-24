@@ -4,7 +4,7 @@ Performance Analysis using Intel® VTune\ :sup:`™` Amplifier
 Introduction
 ------------
 
-`Intel <https://software.intel.com/en-us/intel-vtune-amplifier-xe>`__\ `:sup:`®` <https://software.intel.com/en-us/intel-vtune-amplifier-xe>`__\ `VTune™
+`Intel® VTune™
 Amplifier <https://software.intel.com/en-us/intel-vtune-amplifier-xe>`__ is
 a performance analysis tool targeted for users developing sequential and
 multithreaded applications. Intel VTune Amplifier helps you analyze the
@@ -35,28 +35,29 @@ Intel VTune Amplifier can be used to locate and determine the following:
 -  Hardware-related issues in your code such as data sharing, cache
    misses, branch misprediction, and others.
 
-   1. .. rubric:: Download and Install Intel VTune Amplifier
-         :name: download-and-install-intel-vtune-amplifier
+Download and Install Intel VTune Amplifier
+------------------------------------------
 
 Intel VTune Amplifier is distributed as part of Intel\ :sup:`®` System
 Studio. If you are new to Intel System Studio, click
-the \ `*Download * <https://software.intel.com/en-us/system-studio/choose-download>`__\ page
+the \ `Download <https://software.intel.com/en-us/system-studio/choose-download>`__ page
 at the Intel System Studio website to acquire a free renewable
 commercial license for a 90-day use.
 
-Refer to the **Download and Install Intel System Studio** section of the
-`*Intel* <https://01.org/projectceladon/documentation/tutorials/profiling-system-power-consumption-using-socwatch>`__\ `:sup:`*®️*` <https://01.org/projectceladon/documentation/tutorials/profiling-system-power-consumption-using-socwatch>`__\ `*SoC
-Watch* <https://01.org/projectceladon/documentation/tutorials/profiling-system-power-consumption-using-socwatch>`__
+Refer to the :ref:`download-install-iss` section of the
+:ref:`Intel® SoC Watch <profiling-system-power-consumption-with-socwatch>`
 tutorial to install the Intel System Studio. Ensure the Intel VTune
 Amplifier is selected in the Component selection page during the
 installation. Review the product
-`*prerequisites* <https://software.intel.com/en-us/vtune-amplifier-install-guide-windows-prerequisites>`__
+`prerequisites <https://software.intel.com/en-us/vtune-amplifier-install-guide-windows-prerequisites>`__
 page before installing Intel VTune Amplifier. The Intel VTune Amplifier
 package is available in the following directory after installation:
 
-<ISS\_Install\_Root>/system\_studio\_2018/vtune\_amplifier/
+.. code-block:: bash
 
-    |image0|
+    <ISS_Install_Root>/system_studio_2018/vtune_amplifier/
+
+|image0|
 
 You can Integrate Intel System Studio to Wind River Linux\* and Wind
 River\* Workbench by browsing to the Wind River/Wind River Workbench
@@ -68,7 +69,9 @@ and analysis while using Intel System Studio.
 
 |image1|
 
-The following image is the first look of Intel System Studio:\ |image2|
+The following image is the first look of Intel System Studio:
+
+|image2|
 
 Features Supported for Intel\ :sup:`®` Kaby Lake NUC Platforms
 --------------------------------------------------------------
@@ -119,8 +122,8 @@ functions are called.
 
 Note that the collector does not gather system-wide performance data,
 but instead focuses on your application only. To analyze system
-performance, you should run the \ `*Advanced
-Hotspots* <https://software.intel.com/en-us/vtune-amplifier-help-advanced-hotspots-analysis>`__ analysis.
+performance, you should run the
+`Advanced Hotspots <https://software.intel.com/en-us/vtune-amplifier-help-advanced-hotspots-analysis>`__ analysis.
 
 Use the Basic Hotspots analysis to explore:
 
@@ -128,8 +131,8 @@ Use the Basic Hotspots analysis to explore:
 
 -  View Points
 
-   1. .. rubric:: Launch the Intel VTune Amplifier
-         :name: launch-the-intel-vtune-amplifier
+Launch the Intel VTune Amplifier
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can launch the Intel VTune Amplifier from within the Intel System
 Studio IDE by selecting the \ **Intel System Studio** > **VTune
@@ -141,9 +144,9 @@ appropriate environment variables before opening the tool.
 You can also launch the Intel VTune Amplifier directly with one of the
 following commands:
 
--  To use the standalone GUI interface, run the amplxe-gui command.
+-  To use the standalone GUI interface, run the ``amplxe-gui`` command.
 
--  To use the command line interface, run the amplxe-cl command.
+-  To use the command line interface, run the ``amplxe-cl`` command.
 
 |image4|
 
@@ -151,14 +154,13 @@ Create a Project
 ~~~~~~~~~~~~~~~~
 
 Before you run an analysis with the Intel VTune Amplifier, you have to
-create a \ *project*. A project is a container for an analysis target,
+create a *project*. A project is a container for an analysis target,
 analysis type configuration, and data collection results.
 
 There are three options available to create a project using the
 standalone GUI:
 
-1. Click the \ |image5| menu button in the upper right corner and
-       select \ **New > Project...**.
+1. Click the \ |image5| menu button in the upper right corner and select \ **New > Project...**.
 
 2. Click the \ |image6|\ **New Project** toolbar button.
 
@@ -184,8 +186,8 @@ following options:
 2. Click the \ |image10|\ **New Analysis** toolbar button and click
    the \ **Choose Target** button on the command toolbar on the right.
 
-   1. .. rubric:: Start Analysis
-         :name: start-analysis
+Start Analysis
+~~~~~~~~~~~~~~
 
 When you create a project for the Intel VTune Amplifier performance
 analysis, you have to specify what you want to profile - your analysis
@@ -195,8 +197,8 @@ The following are instructions to prepare your target for analysis:
 
 |image11|
 
-    1. Select the **Android\* device (ADB)** option as shown in the
-    previous figure under **Select a target system to profile** section.
+1. Select the **Android\* device (ADB)** option as shown in the
+previous figure under **Select a target system to profile** section.
 
 2. Select your Android target device. If multiple devices are connected
 to your host machine, be careful to choose the right device based on the
@@ -243,8 +245,8 @@ scenario completion by clicking on **Stop** button.
 
     |image17|
 
- Analysis Reports
-~~~~~~~~~~~~~~~~~
+Analysis Reports
+~~~~~~~~~~~~~~~~
 
 Intel VTune Amplifier generates the analysis reports after manual data
 collection is stopped, or the configed stop conditions are met. The
@@ -271,12 +273,12 @@ to see how your application utilized the CPU:
 
     |image22|
 
-    Click on the **Caller/Callee** tab to see more details on the
-    function calls flow:
+Click on the **Caller/Callee** tab to see more details on the
+function calls flow:
 
     |image23|
 
-    Click on the **Top-Down Tree** tab to see more call stack details:
+Click on the **Top-Down Tree** tab to see more call stack details:
 
     |image24|
 
@@ -291,23 +293,23 @@ Resources
 +---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | **Document**                                                                                                        | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `*Online Training* <http://intel.ly/1aExtsW>`__                                                                     | The online training site is an excellent resource for learning Intel VTune Amplifier basics with Getting Started guides, videos, tutorials, webinars, and technical articles.                                                                                                                                                                                                                                                                                                                                                                                       |
+| `Online Training   <http://intel.ly/1aExtsW>`__                                                                     | The online training site is an excellent resource for learning Intel VTune Amplifier basics with Getting Started guides, videos, tutorials, webinars, and technical articles.                                                                                                                                                                                                                                                                                                                                                                                       |
 +---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `*Intel VTune Amplifier Tutorials* <https://software.intel.com/en-us/articles/intel-vtune-amplifier-tutorials>`__   | Tutorials show you how to use basic Intel VTune Amplifier features. Intel VTune Amplifier tutorials guide a new use through basic walkthrough operations with a short sample. The tutorials provide an excellent foundation before you read the Intel VTune Amplifier help. Sample code is available in the \`samples\` folder inside the VTune Amplifier install directory. More Intel VTune Amplifier sample code and corresponding tutorials are also available at `*Intel Developer Zone website* <https://software.intel.com/en-us/product-code-samples>`__.   |
+| `Intel VTune Amplifier Tutorials   <https://software.intel.com/en-us/articles/intel-vtune-amplifier-tutorials>`__   | Tutorials show you how to use basic Intel VTune Amplifier features. Intel VTune Amplifier tutorials guide a new use through basic walkthrough operations with a short sample. The tutorials provide an excellent foundation before you read the Intel VTune Amplifier help. Sample code is available in the \`samples\` folder inside the VTune Amplifier install directory. More Intel VTune Amplifier sample code and corresponding tutorials are also available at `*Intel Developer Zone website* <https://software.intel.com/en-us/product-code-samples>`__.   |
 +---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `*Intel VTune Amplifier Cookbook* <https://software.intel.com/en-us/vtune-amplifier-cookbook>`__                    | Performance analysis cookbook that contains recipes identifying and solving the most popular performance problems with the help of Intel VTune Amplifier’s analysis types.                                                                                                                                                                                                                                                                                                                                                                                          |
+| `Intel VTune Amplifier Cookbook   <https://software.intel.com/en-us/vtune-amplifier-cookbook>`__                    | Performance analysis cookbook that contains recipes identifying and solving the most popular performance problems with the help of Intel VTune Amplifier’s analysis types.                                                                                                                                                                                                                                                                                                                                                                                          |
 +---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `*Release Notes* <https://software.intel.com/en-us/intel-vtune-amplifier-2018-release-notes>`__                     | The Release Notes document contains the most up-to-date information about the product, including a product description, technical support, and known limitations and issues.                                                                                                                                                                                                                                                                                                                                                                                        |
+| `Release Notes   <https://software.intel.com/en-us/intel-vtune-amplifier-2018-release-notes>`__                     | The Release Notes document contains the most up-to-date information about the product, including a product description, technical support, and known limitations and issues.                                                                                                                                                                                                                                                                                                                                                                                        |
 |                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |                                                                                                                     | This document also contains system requirements for installing the product. Before installation, the Release Notes document is located at the root level (same level as the installation script/executable) of the installation download package.                                                                                                                                                                                                                                                                                                                   |
 +---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `*Installation Guide* <https://software.intel.com/en-us/vtune-amplifier-install-guide-linux>`__                     | The installation Guide contains basic installation instructions for Intel VTune Amplifier and post-installation configuration instructions for the various drivers and collectors.                                                                                                                                                                                                                                                                                                                                                                                  |
+| `Installation Guide   <https://software.intel.com/en-us/vtune-amplifier-install-guide-linux>`__                     | The installation Guide contains basic installation instructions for Intel VTune Amplifier and post-installation configuration instructions for the various drivers and collectors.                                                                                                                                                                                                                                                                                                                                                                                  |
 |                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |                                                                                                                     | The latest Installation Guide can be found on the Intel Developer Zone website.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `*Intel VTune Amplifier Help* <https://software.intel.com/en-us/vtune-amplifier-help>`__                            | The help is the primary document for the Intel VTune Amplifier.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `Intel VTune Amplifier Help   <https://software.intel.com/en-us/vtune-amplifier-help>`__                            | The help is the primary document for the Intel VTune Amplifier.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `*Intel Processor Event Reference* <https://download.01.org/perfmon/index/>`__                                      | This help provides reference information for Intel processor events used by the Intel VTune Amplifier for hardware event-based sampling analysis. Most of this information is drawn from the Intel Processor information sources on the web.                                                                                                                                                                                                                                                                                                                        |
+| `Intel Processor Event Reference   <https://download.01.org/perfmon/index/>`__                                      | This help provides reference information for Intel processor events used by the Intel VTune Amplifier for hardware event-based sampling analysis. Most of this information is drawn from the Intel Processor information sources on the web.                                                                                                                                                                                                                                                                                                                        |
 +---------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. |image0| image:: images/image1.png
